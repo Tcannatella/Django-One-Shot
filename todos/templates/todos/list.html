@@ -14,6 +14,7 @@
     <main>
         <div>
             <h1>My Lists</h1>
+           <p><a href="{% url 'todo_list_create' %}">Create a new list</a><p/>
             <table>
                 <thead>
                     <tr>
@@ -24,6 +25,7 @@
                 <tbody>
                     {% for i in todo_list %}
                         <tr>
+                            {% comment %} 'urls.py name' LoopVariable.id from detail_list function {% endcomment %}
                             <td><a href="{% url 'todo_list_detail' i.id %}">{{i.name}}<a></td>
                             <td>{{i.items.count}}</td>
                         </tr>
