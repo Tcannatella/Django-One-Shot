@@ -13,19 +13,20 @@
     </header>
     <main>
         <div>
-            <h1>My Lists</h1>
+            <h1>{{todo_item.name}}</h1>
+            <h2>Tasks</h2>
             <table>
                 <thead>
                     <tr>
-                        <th> Name </th>
-                        <th> Number of items </th>
+                        <th>Task</th>
+                        <th>Due Date</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for i in todo_list %}
+                    {% for i in todo_item.items.all %}
                         <tr>
-                            <td><a href="{% url 'todo_list_detail' i.id %}">{{i.name}}<a></td>
-                            <td>{{i.items.count}}</td>
+                            <td>{{i.task}}</td>
+                            <td>{{i.due_date}}</td>
                         </tr>
                     {% endfor %}
                 </tbody>
@@ -34,16 +35,3 @@
     </main>
 </body>
 </html>
-
-
-
-
-
-{% comment %} <tr>
-    <td>Reminders</td>
-    <td><!-- Number of items for Reminders --></td>
-</tr>
-<tr>
-    <td>Grocery List</td>
-    <td><!-- Number of items for Grocery List --></td>
-</tr> {% endcomment %}
