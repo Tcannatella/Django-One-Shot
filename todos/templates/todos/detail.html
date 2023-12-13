@@ -14,6 +14,7 @@
     <main>
         <div>
             <h1>{{todo_item.name}}</h1>
+            <p><a href="{% url 'todo_list_update' todo_item.id %}">Edit</a><p/>
             <h2>Tasks</h2>
             <table>
                 <thead>
